@@ -1,0 +1,431 @@
+:root {
+    --primary-pink: #FF6B9D;
+    --light-pink: #FFE5EF;
+    --accent-pink: #FF5C8A;
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --text-light: #999999;
+    --border-color: #E5E5E5;
+    --white: #FFFFFF;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #F5F5F5;
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0;
+}
+
+.pricing-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+    overflow: hidden;
+}
+
+.card-header {
+    text-align: center;
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bundle-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary-pink);
+    letter-spacing: 0.5px;
+}
+
+.option {
+    border-bottom: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+.option:last-of-type {
+    border-bottom: none;
+}
+
+.option:hover {
+    background-color: #FAFAFA;
+}
+
+.option input[type="radio"] {
+    display: none;
+}
+
+.option-label {
+    cursor: pointer;
+    display: block;
+    padding: 20px 24px;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.option-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.option-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.radio-indicator {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    position: relative;
+    transition: all var(--transition-speed) ease;
+    flex-shrink: 0;
+}
+
+.option input[type="radio"]:checked ~ .option-label .radio-indicator {
+    border-color: var(--primary-pink);
+    border-width: 2px;
+}
+
+.option input[type="radio"]:checked ~ .option-label .radio-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-pink);
+    border-radius: 50%;
+    animation: radioCheck 0.2s ease;
+}
+
+@keyframes radioCheck {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.option input[type="radio"]:checked ~ .option-label {
+    background-color: var(--white);
+}
+
+.option input[type="radio"]:checked {
+    & ~ .option-label {
+        position: relative;
+    }
+}
+
+.option.option--popular {
+    border: 2px solid var(--primary-pink);
+    border-radius: 4px;
+    margin: 0;
+}
+
+.option input[type="radio"]:checked {
+    & ~ .option-label {
+        border-left: 4px solid var(--primary-pink);
+        padding-left: 20px;
+    }
+}
+
+.option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.option-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.option-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.option-price.highlight {
+    color: #2563EB;
+}
+
+.price-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.original-price {
+    font-size: 13px;
+    color: var(--text-light);
+    text-decoration: line-through;
+    font-weight: 400;
+}
+
+.badge {
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.badge.discount {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+.badge.popular {
+    background-color: var(--primary-pink);
+    color: var(--white);
+}
+
+.option-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease,
+                padding 0.4s ease;
+    opacity: 0;
+    padding: 0 24px;
+}
+
+.option input[type="radio"]:checked ~ .option-details {
+    max-height: 400px;
+    opacity: 1;
+    padding: 0 24px 20px 60px;
+}
+
+.details-content {
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.selection-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 16px;
+}
+
+.selection-table thead th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.selection-table thead th:first-child {
+    width: 40px;
+}
+
+.selection-table tbody td {
+    padding: 12px 12px 12px 0;
+    vertical-align: middle;
+}
+
+.row-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-medium);
+}
+
+select.size-select,
+select.color-select {
+    width: 100%;
+    padding: 8px 32px 8px 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: all var(--transition-speed) ease;
+}
+
+select.size-select:hover,
+select.color-select:hover {
+    border-color: var(--primary-pink);
+}
+
+select.size-select:focus,
+select.color-select:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+}
+
+.cart-section {
+    padding: 24px;
+    background-color: var(--white);
+    border-top: 1px solid var(--border-color);
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.free-delivery {
+    font-size: 14px;
+    color: var(--primary-pink);
+    font-weight: 600;
+}
+
+.total-price {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.total-price strong {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 14px 24px;
+    background-color: var(--primary-pink);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--accent-pink);
+    box-shadow: 0 4px 12px rgba(255, 107, 157, 0.4);
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(255, 107, 157, 0.3);
+}
+
+.btn-icon {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.powered-by {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+/* Responsive Design */
+  @media screen and (max-width: 640px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+
+    .option-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .option-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .option input[type="radio"]:checked ~ .option-details {
+        padding-left: 24px;
+    }
+
+    .selection-table {
+        font-size: 13px;
+    }
+
+    select.size-select,
+    select.color-select {
+        font-size: 13px;
+        padding: 6px 28px 6px 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bundle-title {
+        font-size: 18px;
+    }
+
+    .option-label {
+        padding: 16px 20px;
+    }
+
+    .cart-section {
+        padding: 20px;
+    }
+
+    .selection-table thead th,
+    .selection-table tbody td {
+        padding: 8px 8px 8px 0;
+    }
+}

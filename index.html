@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bundle & Save - Interactive pricing options with customization">
+    <title>Bundle & Save - Interactive Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pricing-card">
+            <header class="card-header">
+                <h1 class="bundle-title">Bundle & Save</h1>
+            </header>
+
+            <div class="option" id="option-1">
+                <input type="radio" name="pair" id="pair-1" value="1">
+                <label for="pair-1" class="option-label">
+                    <div class="option-header">
+                        <div class="option-left">
+                            <span class="radio-indicator"></span>
+                            <div class="option-info">
+                                <span class="option-title">1 Pair</span>
+                                <span class="option-price">DKK 195.00</span>
+                            </div>
+                        </div>
+                        <div class="option-right">
+                            <span class="badge discount">50% OFF</span>
+                        </div>
+                    </div>
+                </label>
+                
+                <div class="option-details">
+                    <div class="details-content">
+                        <table class="selection-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Size</th>
+                                    <th>Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="row-label">#1</td>
+                                    <td>
+                                        <select class="size-select" id="size-1-1" aria-label="Size for item 1">
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="color-select" id="color-1-1" aria-label="Colour for item 1">
+                                            <option value="colour" selected>colour</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Blue">Blue</option>
+                                            <option value="Green">Green</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="row-label">#2</td>
+                                    <td>
+                                        <select class="size-select" id="size-1-2" aria-label="Size for item 2">
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="color-select" id="color-1-2" aria-label="Colour for item 2">
+                                            <option value="colour" selected>colour</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Blue">Blue</option>
+                                            <option value="Green">Green</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="option option--popular" id="option-2">
+                <input type="radio" name="pair" id="pair-2" value="2" checked>
+                <label for="pair-2" class="option-label">
+                    <div class="option-header">
+                        <div class="option-left">
+                            <span class="radio-indicator"></span>
+                            <div class="option-info">
+                                <span class="option-title">2 Pair</span>
+                                <div class="price-group">
+                                    <span class="option-price highlight">DKK 345.00</span>
+                                    <span class="original-price">DKK 195.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option-right">
+                            <span class="badge popular">Most Popular</span>
+                            <span class="badge discount">40% OFF</span>
+                        </div>
+                    </div>
+                </label>
+                
+                <div class="option-details">
+                    <div class="details-content">
+                        <table class="selection-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Size</th>
+                                    <th>Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="row-label">#1</td>
+                                    <td>
+                                        <select class="size-select" id="size-2-1" aria-label="Size for item 1">
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="color-select" id="color-2-1" aria-label="Colour for item 1">
+                                            <option value="colour" selected>colour</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Blue">Blue</option>
+                                            <option value="Green">Green</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="row-label">#2</td>
+                                    <td>
+                                        <select class="size-select" id="size-2-2" aria-label="Size for item 2">
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="color-select" id="color-2-2" aria-label="Colour for item 2">
+                                            <option value="colour" selected>colour</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Blue">Blue</option>
+                                            <option value="Green">Green</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="option" id="option-3">
+                <input type="radio" name="pair" id="pair-3" value="3">
+                <label for="pair-3" class="option-label">
+                    <div class="option-header">
+                        <div class="option-left">
+                            <span class="radio-indicator"></span>
+                            <div class="option-info">
+                                <span class="option-title">3 Pair</span>
+                                <span class="option-price">DKK 528.00</span>
+                            </div>
+                        </div>
+                        <div class="option-right">
+                            <span class="badge discount">60% OFF</span>
+                        </div>
+                    </div>
+                </label>
+                
+                <div class="option-details">
+                    <div class="details-content">
+                        <table class="selection-table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Size</th>
+                                    <th>Colour</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="row-label">#1</td>
+                                    <td>
+                                        <select class="size-select" id="size-3-1" aria-label="Size for item 1">
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="color-select" id="color-3-1" aria-label="Colour for item 1">
+                                            <option value="colour" selected>colour</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Blue">Blue</option>
+                                            <option value="Green">Green</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="row-label">#2</td>
+                                    <td>
+                                        <select class="size-select" id="size-3-2" aria-label="Size for item 2">
+                                            <option value="S" selected>S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="color-select" id="color-3-2" aria-label="Colour for item 2">
+                                            <option value="colour" selected>colour</option>
+                                            <option value="Black">Black</option>
+                                            <option value="White">White</option>
+                                            <option value="Red">Red</option>
+                                            <option value="Blue">Blue</option>
+                                            <option value="Green">Green</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-section">
+                <div class="cart-summary">
+                    <span class="free-delivery">Free 2 Day Shipping</span>
+                    <span class="total-price">Total : <strong>DKK 360.00</strong></span>
+                </div>
+                <button class="add-to-cart-btn" id="add-to-cart" aria-label="Add to cart">
+                    <span class="btn-icon">+</span>
+                    <span class="btn-text">Add to Cart</span>
+                </button>
+                <p class="powered-by">© Powered by Pumper</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
